@@ -1,4 +1,6 @@
-# Perform a LinkedIn search for jobs.
+
+# linkedin bot paramters
+### Perform a LinkedIn search for jobs.
 #         :param keywords: Search keywords (str)
 #         :type keywords: str, optional
 #         :param companies: A list of company URN IDs (str)
@@ -30,24 +32,36 @@
 
 
 bots:
-  - name: 'SysAdmin DevOps telegram bot'
+  - name: 'high performance computing hpc'
     from:
       - LinkedIn:
-          keywords: 'DevOps'
-          location_name: 'Egypt'
-          limit: 10
+          keywords: 'HPC'
+          location_name: 'EMEA'
+          limit: 20
           offset: 0
+          listed_at: 86400
+          
+      - LinkedIn:
+          keywords: 'HPC'
+          location_name: 'MENA'
+          limit: 20
+          offset: 0
+          listed_at: 86400
+
+      - LinkedIn:
+          keywords: 'HPC'
+          location_name: 'APAC'
+          limit: 20
+          offset: 0
+          listed_at: 86400
+
+      - LinkedIn:
+          keywords: 'HPC'
+          location_name: 'United States'
+          limit: 20
+          offset: 0
+          listed_at: 86400
+
     to:
       telegram:
-        channel_id: '@jobee28'
-  # - name: Bot2
-  #   from:
-  #     - Monster:
-  #         job_title: 'Software Engineer'
-  #         location_name: 'Germany'
-  #         limit: 5
-  #         offset: 0
-  #   to:
-  #     telegram:
-  #       token: 'your_telegram_bot_token_2'
-  #       channel_id: 'your_telegram_chat_id_2'
+        channel_id: '@jobee_hpc'

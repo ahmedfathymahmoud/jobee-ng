@@ -1,4 +1,5 @@
 
+import sqlite3
 from lib.telegramBot.telegramJobee import tele_jobee
 from lib.sources.linkedin import LinkedinAPI
 
@@ -22,3 +23,19 @@ def generate_message(source_name, job):
 
     else:
         raise ValueError(f"No support available for {source_name}")
+
+
+def create_table(conn):
+    conn.execute('''CREATE TABLE IF NOT EXISTS jobs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        jobid TEXT NOT NULL UNIQUE
+                    );''')
+    conn.commit()
+
+def insert_job(conn, jobid):
+    conn.execute('INSERT INTO jobs (jobid) VALUES (?)', (jobid,))
+    conn.commit()
+
+def job_exists(conn, jobid):
+    cursor = conn.execute('SELECT 1 FROM jobs WHERE jobid = ?', (jobid,))
+    return cursor.fetchone() is not None
