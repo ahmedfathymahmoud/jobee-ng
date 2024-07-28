@@ -36,32 +36,106 @@ bots:
     from:
       - LinkedIn:
           keywords: 'HPC'
-          location_name: 'EMEA'
-          limit: 20
+          # location_name: 'EMEA'
+          geoId: '91000007'
+          limit: 40
           offset: 0
-          listed_at: 86400
+          listed_at: 286400
           
       - LinkedIn:
           keywords: 'HPC'
-          location_name: 'MENA'
+          #location_name: 'Middle East'
+          geoId: '91000001'
           limit: 20
           offset: 0
-          listed_at: 86400
+          listed_at: 186400
 
       - LinkedIn:
           keywords: 'HPC'
-          location_name: 'APAC'
+          #location_name: 'APAC'
+          geoId: '91000003'
           limit: 20
           offset: 0
-          listed_at: 86400
+          listed_at: 186400
 
       - LinkedIn:
           keywords: 'HPC'
-          location_name: 'United States'
+          #location_name: 'Oceania'
+          geoId: '91000010'
           limit: 20
           offset: 0
-          listed_at: 86400
+          listed_at: 186400
+
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'Latin America'
+          geoId: '91000011'
+          limit: 20
+          offset: 0
+          listed_at: 186400
+
+      - LinkedIn:
+          keywords: 'HPC engineer'
+          #location_name: 'NAMER'
+          geoId: "91000022"
+          limit: 40
+          offset: 0
+          listed_at: 686400
 
     to:
       telegram:
         channel_id: '@jobee_hpc'
+
+  - name: 'DevOps'
+    from:
+      - LinkedIn:
+          keywords: 'devops'
+          location_name: 'EMEA'
+          geoId: '91000007'
+          limit: 40
+          offset: 0
+          listed_at: 286400
+          
+      - LinkedIn:
+          keywords: 'devops'
+          location_name: 'Middle East'
+          geoId: '91000001'
+          limit: 20
+          offset: 0
+          listed_at: 286400
+
+      - LinkedIn:
+          keywords: 'devops'
+          location_name: 'APAC'
+          geoId: '91000003'
+          limit: 20
+          offset: 0
+          listed_at: 286400
+
+      - LinkedIn:
+          keywords: 'devops'
+          location_name: 'Oceania'
+          geoId: '91000010'
+          limit: 20
+          offset: 0
+          listed_at: 286400
+
+      - LinkedIn:
+          keywords: 'devops'
+          #location_name: 'Latin America'
+          geoId: '91000011'
+          limit: 20
+          offset: 0
+          listed_at: 186400
+
+      - LinkedIn:
+          keywords: 'devops'
+          #location_name: 'NAMER'
+          geoId: "91000022"
+          limit: 20
+          offset: 0
+          listed_at: 186400
+
+    to:
+      telegram:
+        channel_id: '@jobee29'

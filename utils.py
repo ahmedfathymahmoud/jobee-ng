@@ -19,7 +19,7 @@ def get_bot(destination):
 
 def generate_message(source_name, job):
     if source_name == 'LinkedIn':
-        return f'https://www.linkedin.com/jobs/view/{job['entityUrn'].split(':')[-1]}'
+        return f'https://www.linkedin.com/jobs/view/{job["entityUrn"].split(":")[-1]}'
 
     else:
         raise ValueError(f"No support available for {source_name}")

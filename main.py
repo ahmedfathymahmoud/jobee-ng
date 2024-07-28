@@ -19,6 +19,7 @@ if __name__ == "__main__":
                 jobs = source.get_jobs(**params)
                 for job in jobs:
                     job_id=job['entityUrn'].split(':')[-1]
+                    print(generate_message(source_name, job) )
                     if not job_exists(conn, job_id):
                         insert_job(conn, job_id)
                         message = generate_message(source_name, job)
