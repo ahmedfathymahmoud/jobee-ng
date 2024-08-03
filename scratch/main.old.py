@@ -1,5 +1,5 @@
 import sqlite3
-from utils import *
+from scratch.utils import *
 from config.settings import config
 
 

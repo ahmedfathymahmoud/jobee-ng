@@ -32,10 +32,11 @@
 
 
 bots:
-  - name: 'high performance computing hpc'
+  - name: 'HPC'
+    run_every: '15 minutes'
     from:
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           # location_name: 'EMEA'
           geoId: '91000007'
           limit: 20
@@ -43,7 +44,7 @@ bots:
           listed_at: 86400
           
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           #location_name: 'Middle East'
           geoId: '91000001'
           limit: 20
@@ -51,7 +52,7 @@ bots:
           listed_at: 86400
 
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           #location_name: 'APAC'
           geoId: '91000003'
           limit: 20
@@ -59,7 +60,7 @@ bots:
           listed_at: 86400
 
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           #location_name: 'Oceania'
           geoId: '91000010'
           limit: 20
@@ -67,7 +68,7 @@ bots:
           listed_at: 86400
 
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           #location_name: 'Latin America'
           geoId: '91000011'
           limit: 20
@@ -75,7 +76,7 @@ bots:
           listed_at: 86400
 
       - LinkedIn:
-          keywords: 'HPC'
+          keywords: 'hpc'
           #location_name: 'NAMER'
           geoId: "91000022"
           limit: 20
