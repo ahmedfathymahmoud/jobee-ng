@@ -8,12 +8,15 @@ SERVICE_FILE=/etc/systemd/system/jobee.service
 
 .PHONY: setup venv install-deps install-service clean
 
+all: setup install-service
+
+
 # Setup virtual environment
 setup: venv install-deps
 
 # Create virtual environment
 venv:
-	python -m venv .venv
+	python3 -m venv .venv
 
 # Install dependencies
 install-deps:
