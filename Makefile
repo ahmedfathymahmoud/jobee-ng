@@ -16,7 +16,7 @@ setup: venv install-deps
 
 # Create virtual environment
 venv:
-	python -m venv .venv
+	python3 -m venv .venv
 
 # Install dependencies
 install-deps:
