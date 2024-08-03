@@ -162,3 +162,9 @@ tests/linked_connection.py
 
 #logs
 logs/
+
+# jobsdb
+jobs.db
+
+# scratch 
+scratch/
