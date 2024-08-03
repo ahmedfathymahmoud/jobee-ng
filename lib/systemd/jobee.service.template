@@ -3,12 +3,12 @@ Description=Job Bot Service
 After=network.target
 
 [Service]
-User=$(USER)
-Group=$(GROUP)
-WorkingDirectory=$(WORKING_DIR)
-ExecStart=$(PYTHON_EXEC) $(SCRIPT_PATH)
+User={{USER}}
+Group={{GROUP}}
+WorkingDirectory={{WORKING_DIR}}
+ExecStart={{PYTHON_EXEC}} {{SCRIPT_PATH}}
 Restart=always
-
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
