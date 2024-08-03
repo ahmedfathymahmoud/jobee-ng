@@ -8,10 +8,10 @@ all: install-venv install-service
 # Create and activate virtual environment, install dependencies
 install-venv:
 	@echo "Creating virtual environment..."
-	python3 -m venv venv
+	python3 -m venv .venv
 	@echo "Activating virtual environment and installing dependencies..."
-	venv/bin/pip install --upgrade pip
-	venv/bin/pip install -r requirements.txt
+	.venv/bin/pip install --upgrade pip
+	.venv/bin/pip install -r requirements.txt
 
 # Install systemd service
 install-service:
@@ -26,7 +26,7 @@ install-service:
 	    -e "s/\$(WORKING_DIR)/$(WORKING_DIR)/g" \
 	    -e "s/\$(PYTHON_EXEC)/$(PYTHON_EXEC)/g" \
 	    -e "s/\$(SCRIPT_PATH)/$(SCRIPT_PATH)/g" \
-	    jobbot.service.template | sudo tee /etc/systemd/system/jobbot.service > /dev/null
+	    lib/systemd/jobee.service.template | sudo tee /etc/systemd/system/jobee.service > /dev/null
 	sudo systemctl daemon-reload
 	sudo systemctl enable jobbot.service
 	sudo systemctl start jobbot.service
