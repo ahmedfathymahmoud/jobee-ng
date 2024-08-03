@@ -11,8 +11,10 @@ class TelegramChannel:
         self.baseUrl = f'https://api.telegram.org/bot{self.token}'
         self.headers = CaseInsensitiveDict()
         self.headers["Content-Type"] = "application/json"
+        self.name ='telegram'
+        self.uid = chat_id.replace('@', '').replace('-', '_')
 
-    def post_message(self, text):
+    def post_txt(self, text):
         url = self.baseUrl + '/sendMessage'
         data = '''
         {{ "chat_id":"{}",
