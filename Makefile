@@ -38,6 +38,20 @@ generate-service:
 	    lib/systemd/jobee.service.template > $(TEMP_SERVICE_FILE)
 	@echo "Service file generated at $(TEMP_SERVICE_FILE)"
 
+install-service:
+	@echo "Installing and starting systemd service..."
+	@if [ "$$(id -u)" -ne 0 ]; then \
+	    echo "You must run this command as root."; \
+	    exit 1; \
+	fi
+	cp $(TEMP_SERVICE_FILE) $(SERVICE_FILE)
+	systemctl daemon-reload
+	systemctl enable jobee.service
+	systemctl start jobee.service
+	@echo "Service installed and started successfully."
+
+
 # Clean virtual environment
 clean:
 	rm -rf .venv
+	rm -f $(TEMP_SERVICE_FILE)
