@@ -40,7 +40,6 @@ jobs:
 
     - name: Deploy
       run: |
-        sudo -i
         cd /opt/jobee-ng
         git pull
         systemctl restart jobee.service
