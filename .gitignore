@@ -159,3 +159,6 @@ cython_debug/
 #.idea/
 
 tests/linked_connection.py
+
+#logs
+logs/
