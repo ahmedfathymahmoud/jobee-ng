@@ -5,6 +5,7 @@ WORKING_DIR=$(shell pwd)
 PYTHON_EXEC=$(WORKING_DIR)/.venv/bin/python
 SCRIPT_PATH=$(WORKING_DIR)/run.py
 TEMP_SERVICE_FILE=/tmp/jobee.service
+SERVICE_FILE=/etc/systemd/system/jobee.service
 
 .PHONY: all setup venv install-deps generate-service clean
 
