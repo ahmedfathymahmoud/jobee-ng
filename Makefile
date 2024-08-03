@@ -6,10 +6,10 @@ PYTHON_EXEC=$(WORKING_DIR)/.venv/bin/python
 SCRIPT_PATH=$(WORKING_DIR)/run.py
 SERVICE_FILE=/etc/systemd/system/jobee.service
 
-.PHONY: setup venv install-deps install-service clean
+.PHONY: all setup venv install-deps install-service clean
 
+# Run all steps: setup and install-service
 all: setup install-service
-
 
 # Setup virtual environment
 setup: venv install-deps
@@ -26,9 +26,9 @@ install-deps:
 define SUDO_IF_NOT_ROOT
 if [ "$$(id -u)" -ne 0 ]; then \
     echo "Not running as root. Using sudo for $$1"; \
-    sudo $$1; \
+    sudo sh -c "$$1"; \
 else \
-    $$1; \
+    sh -c "$$1"; \
 fi
 endef
 
@@ -46,10 +46,10 @@ install-service:
 	    -e "s|{{PYTHON_EXEC}}|$(PYTHON_EXEC)|g" \
 	    -e "s|{{SCRIPT_PATH}}|$(SCRIPT_PATH)|g" \
 	    lib/systemd/jobee.service.template > jobee.service
-	$(call SUDO_IF_NOT_ROOT, cp jobee.service $(SERVICE_FILE))
-	$(call SUDO_IF_NOT_ROOT, systemctl daemon-reload)
-	$(call SUDO_IF_NOT_ROOT, systemctl enable jobee.service)
-	$(call SUDO_IF_NOT_ROOT, systemctl start jobee.service)
+	$(call SUDO_IF_NOT_ROOT, "cp jobee.service $(SERVICE_FILE)")
+	$(call SUDO_IF_NOT_ROOT, "systemctl daemon-reload")
+	$(call SUDO_IF_NOT_ROOT, "systemctl enable jobee.service")
+	$(call SUDO_IF_NOT_ROOT, "systemctl start jobee.service")
 
 # Clean virtual environment
 clean:
