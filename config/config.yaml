@@ -32,59 +32,59 @@
 
 
 bots:
-#   - name: 'high performance computing hpc'
-#     from:
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           # location_name: 'EMEA'
-#           geoId: '91000007'
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+  - name: 'high performance computing hpc'
+    from:
+      - LinkedIn:
+          keywords: 'HPC'
+          # location_name: 'EMEA'
+          geoId: '91000007'
+          limit: 20
+          offset: 0
+          listed_at: 86400
           
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           #location_name: 'Middle East'
-#           geoId: '91000001'
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'Middle East'
+          geoId: '91000001'
+          limit: 20
+          offset: 0
+          listed_at: 86400
 
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           #location_name: 'APAC'
-#           geoId: '91000003'
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'APAC'
+          geoId: '91000003'
+          limit: 20
+          offset: 0
+          listed_at: 86400
 
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           #location_name: 'Oceania'
-#           geoId: '91000010'
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'Oceania'
+          geoId: '91000010'
+          limit: 20
+          offset: 0
+          listed_at: 86400
 
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           #location_name: 'Latin America'
-#           geoId: '91000011'
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'Latin America'
+          geoId: '91000011'
+          limit: 20
+          offset: 0
+          listed_at: 86400
 
-#       - LinkedIn:
-#           keywords: 'HPC'
-#           #location_name: 'NAMER'
-#           geoId: "91000022"
-#           limit: 20
-#           offset: 0
-#           listed_at: 86400
+      - LinkedIn:
+          keywords: 'HPC'
+          #location_name: 'NAMER'
+          geoId: "91000022"
+          limit: 20
+          offset: 0
+          listed_at: 86400
 
-#     to:
-#      - telegram:
-#         chat_id: '@jobee29'
+    to:
+     - telegram:
+        chat_id: '@jobee_hpc'
 
   - name: 'DevOps'
     from:
@@ -120,13 +120,13 @@ bots:
           offset: 0
           listed_at: 286400
 
-      - LinkedIn:
-          keywords: 'devops'
-          #location_name: 'Latin America'
-          geoId: '91000011'
-          limit: 20
-          offset: 0
-          listed_at: 186400
+    #   - LinkedIn:
+    #       keywords: 'devops'
+    #       #location_name: 'Latin America'
+    #       geoId: '91000011'
+    #       limit: 20
+    #       offset: 0
+    #       listed_at: 186400
 
       - LinkedIn:
           keywords: 'devops'
@@ -138,4 +138,4 @@ bots:
 
     to:
      - telegram:
-        chat_id: '@jobee29'
+        chat_id: '@jobee28'
