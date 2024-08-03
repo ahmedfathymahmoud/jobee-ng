@@ -19,8 +19,8 @@ install-service:
 	USER=$(shell whoami)
 	GROUP=$(shell id -g -n $(USER))
 	WORKING_DIR=$(shell pwd)
-	PYTHON_EXEC=$(WORKING_DIR)/venv/bin/python
-	SCRIPT_PATH=$(WORKING_DIR)/src/main.py
+	PYTHON_EXEC=$(WORKING_DIR)/.venv/bin/python
+	SCRIPT_PATH=$(WORKING_DIR)/run.py
 	sed -e "s/\$(USER)/$(USER)/g" \
 	    -e "s/\$(GROUP)/$(GROUP)/g" \
 	    -e "s/\$(WORKING_DIR)/$(WORKING_DIR)/g" \
