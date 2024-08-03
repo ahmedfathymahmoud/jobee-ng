@@ -1,0 +1,50 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # build:
+  #   runs-on: ubuntu-latest  # Default GitHub runner
+
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v3
+
+  #   - name: Set up Python
+  #     uses: actions/setup-python@v4
+  #     with:
+  #       python-version: '3.9'  # Change to your Python version
+
+  #   - name: Install dependencies
+  #     run: |
+  #       python -m venv venv
+  #       venv/bin/pip install --upgrade pip
+  #       venv/bin/pip install -r requirements.txt
+
+  #   - name: Run tests
+  #     run: |
+  #       venv/bin/python -m unittest discover  # Replace with your test command
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy
+      run: |
+        sudo -i
+        cd /opt/jobee-ng
+        git pull
+        systemctl restart jobee.service
+
+    - name: Notify Deployment
+      run: |
+        echo "Deployment completed successfully!"
