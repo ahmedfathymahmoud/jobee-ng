@@ -16,7 +16,17 @@ install-venv:
 # Install systemd service
 install-service:
 	@echo "Installing systemd service..."
-	sudo cp jobbot.service /etc/systemd/system/jobbot.service
+	USER=$(shell whoami)
+	GROUP=$(shell id -g -n $(USER))
+	WORKING_DIR=$(shell pwd)
+	PYTHON_EXEC=$(WORKING_DIR)/venv/bin/python
+	SCRIPT_PATH=$(WORKING_DIR)/src/main.py
+	sed -e "s/\$(USER)/$(USER)/g" \
+	    -e "s/\$(GROUP)/$(GROUP)/g" \
+	    -e "s/\$(WORKING_DIR)/$(WORKING_DIR)/g" \
+	    -e "s/\$(PYTHON_EXEC)/$(PYTHON_EXEC)/g" \
+	    -e "s/\$(SCRIPT_PATH)/$(SCRIPT_PATH)/g" \
+	    jobbot.service.template | sudo tee /etc/systemd/system/jobbot.service > /dev/null
 	sudo systemctl daemon-reload
 	sudo systemctl enable jobbot.service
 	sudo systemctl start jobbot.service
