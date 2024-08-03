@@ -42,7 +42,7 @@ jobs:
       run: |
         cd /opt/jobee-ng
         git pull
-        systemctl restart jobee.service
+        sudo systemctl restart jobee.service
 
     - name: Notify Deployment
       run: |
