@@ -1,21 +1,24 @@
-from linkedin_api import Linkedin
+
+import sys
+from src.sources.linkedin_source import LinkedInSource
 from config.settings import config
 
-# Authenticate using any Linkedin account credentials
-api = Linkedin('', '')
+linkedin =LinkedInSource()
 
-# GET a profile
-#profile = api.get_profile('billy-g')
+jobs=linkedin.fetch_jobs(
+        #job_title=['HPC'],
+        keywords='"HPC"',
+        location_name='France',
+        limit=5,
+        offset=0,
+    )
 
-
-#print(profile)
-# GET a profiles contact info
-#contact_info = api.get_profile_contact_info('billy-g')
-#print(contact_info)
-
-# GET 1st degree connections of a given profile
-# connections = api.get_profile_connections('1234asc12304')
-
+for j in jobs:
+    print(j.message())
+    
+    
+    
+#+++++++++++++++++++++++++++++++++++++++#
 """Perform a LinkedIn search for jobs.
 
         :param keywords: Search keywords (str)
@@ -45,15 +48,3 @@ api = Linkedin('', '')
         :return: List of jobs
         :rtype: list
         """
-
-jobs = api.search_jobs(
-        #job_title=['HPC Engineer'],
-        keywords='DevOps',
-        location_name='France',
-        limit=5,
-        offset=0,
-    )
-
-
-for job in jobs:
-    print(f'https://www.linkedin.com/jobs/view/{job['entityUrn'].split(':')[-1]}')
