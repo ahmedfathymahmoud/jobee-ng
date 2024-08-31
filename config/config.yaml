@@ -33,7 +33,7 @@
 
 bots:
   - name: 'HPC'
-    run_every: '15 minutes'
+    run_every: '115 minutes'
     from:
       - LinkedIn:
           keywords: '"HPC"'
@@ -88,6 +88,7 @@ bots:
         chat_id: '@jobee_hpc'
 
   - name: 'DevOps'
+    run_every: '115 minutes'
     from:
       - LinkedIn:
           keywords: '"devops"'
@@ -144,6 +145,7 @@ bots:
 
 
   - name: 'Embedded'
+    run_every: '115 minutes'
     from:
       - LinkedIn:
           keywords: '"Autosar" OR "Embedded" OR "Functional safety"'
